@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BUILD_JAR=$(ls /home/ubuntu/app/build/libs/*.jar)
+BUILD_JAR=$(ls /home/ubuntu/app/build/libs/*.jar | grep -v plain | head -n 1)
+
 JAR_NAME=$(basename $BUILD_JAR)
 echo ">>> build 파일명: $JAR_NAME" >> /home/ubuntu/deploy.log
 
